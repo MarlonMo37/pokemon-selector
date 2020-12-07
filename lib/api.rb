@@ -35,6 +35,3 @@ class Selector::API
 
 
 end
-
-# Selector::API.new(2).get_urls
-#  binding.pry
