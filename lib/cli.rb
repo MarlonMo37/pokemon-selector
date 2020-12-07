@@ -2,6 +2,7 @@ class Selector::CLI
 
     def run
         puts "Hello, welcome to the amazing world of Pokemon!!"
+        sleep 1.80
         start
     end
 
@@ -27,11 +28,13 @@ class Selector::CLI
             chosen_info
         else
             self.print_all_info(input)
+            puts ""
             continue
         end
     end
     
     def continue
+        puts ""
         puts "Would you like to learn about another Pokemon? Enter Y or N"
         input = gets.strip.to_s
         if input.capitalize == "Y"
@@ -39,25 +42,16 @@ class Selector::CLI
         elsif input.capitalize == "N"
             puts "Ok, thank you for letting me join you on your journey!!"
         else
-            "Sorry, but I dont understand you answer"
+            puts "Sorry, but I dont understand your answer"
             continue
         end
     end
-
-
-
-
-
-
-
-
-
-
 
     def list_poke
         Selector::Pokemon.all.each.with_index(1) do |poke, index|
         name_2 = poke.name
         puts "#{index}. #{name_2.capitalize}"
+        sleep 0.20
         end 
     end
 
@@ -118,20 +112,27 @@ class Selector::CLI
 
     def print_all_info(input)
         puts ""
+        sleep 1.20
         self.print_name(input)
         puts ""
+        sleep 1.20
         self.print_types(input)
         puts ""
         puts ""
+        sleep 1.20
         self.print_abilities(input)
         puts ""
+        sleep 1.20
         self.print_stats(input)
         puts ""
         puts ""
+        sleep 1.20
         self.print_height(input)
         puts ""
         puts ""
+        sleep 1.20
         self.print_weight(input)
+        sleep 1.20
     end
 end
 
