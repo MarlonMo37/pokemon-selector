@@ -27,11 +27,22 @@ class Selector::CLI
             chosen_info
         else
             self.print_all_info(input)
-            puts "Would you like to learn about another Pokemon? Enter Y or N"
-            
+            continue
         end
     end
-
+    
+    def continue
+        puts "Would you like to learn about another Pokemon? Enter Y or N"
+        input = gets.strip.to_s
+        if input.capitalize == "Y"
+            start
+        elsif input.capitalize == "N"
+            puts "Ok, thank you for letting me join you on your journey!!"
+        else
+            "Sorry, but I dont understand you answer"
+            continue
+        end
+    end
 
 
 
