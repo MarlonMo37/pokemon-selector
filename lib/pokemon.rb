@@ -3,12 +3,11 @@ class Selector::Pokemon
     @@all = []
 
     def initialize(info)
-        info.each { |k, v|
+        info.each do |k, v|
             self.class.attr_accessor k
             self.send("#{k}=", v)
-        }
+        end
         @@all << self
-        
     end
 
     def self.all
@@ -22,7 +21,6 @@ class Selector::Pokemon
     def self.select_poke(input)
         Selector::Pokemon.all[input.to_i - 1]
     end
-
 
 end
 

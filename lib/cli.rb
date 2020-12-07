@@ -134,6 +134,7 @@ class Selector::CLI
         self.print_weight(input)
         sleep 1.20
     end
+    
 end
 
 

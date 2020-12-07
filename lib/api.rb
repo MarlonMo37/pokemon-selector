@@ -21,9 +21,9 @@ class Selector::API
         response = Net::HTTP.get(uri)
         info = JSON.parse(response)
         pokemons = info["results"]
-        pokemons.each { |poke_info|
+        pokemons.each do |poke_info|
             get_poke_info(poke_info["url"])
-        }
+        end
     end
 
     def get_poke_info(url)
@@ -32,6 +32,5 @@ class Selector::API
         info = JSON.parse(response)
         Selector::Pokemon.new(info)
     end
-
-
+    
 end
