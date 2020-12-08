@@ -23,4 +23,3 @@ class Selector::Pokemon
     end
 
 end
-

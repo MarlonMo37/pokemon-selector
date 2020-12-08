@@ -41,16 +41,31 @@ class Selector::CLI
         puts "Would you like to learn about another Pokemon? Enter Y or N"
         input = gets.strip.to_s
         if input.capitalize == "Y"
-            puts "Great!!"
-            sleep 1.80
-            start
+            show_again
         elsif input.capitalize == "N"
             puts "Ok, thank you for letting me join you on your journey!!"
         else
             sleep 0.20
             puts "Sorry, but I dont understand your answer"
-            sleep 1.80
             continue
+        end
+    end
+
+    def show_again
+        puts "Would you like to see a different generation? Enter Y or N"
+        input = gets.strip.to_s
+        if input.capitalize == "Y"
+            start
+        elsif input.capitalize == "N"
+            puts "Great, we'll show the Pokemon again"
+            sleep 1.80
+            list_poke
+            puts "please choose another Pokemon you would like to learn more about"
+            chosen_info
+        else
+            puts "Sorry, but I dont understand your answer"
+            sleep 1.80
+            show_again
         end
     end
 
@@ -142,7 +157,3 @@ class Selector::CLI
     end
 
 end
-
-
-
-
