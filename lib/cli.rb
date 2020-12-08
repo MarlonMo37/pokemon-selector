@@ -11,9 +11,11 @@ class Selector::CLI
         input = gets.strip.to_i
         if (1..8).include?(input) == false
             puts "Sorry, but that generation of Pokemon doesn't exist, please enter a valid generation between 1-8"
+            sleep 1.80
             start
         else 
             puts "Great choice, please wait while we search for the Pokemon..."
+            Selector::Pokemon.reset_all
             Selector::API.new(input).get_urls
             list_poke
             puts "Here is the list of Pokemon that belong to that generation, now type the number of the Pokemon you would like to know more about"
@@ -34,15 +36,20 @@ class Selector::CLI
     end
     
     def continue
+        sleep 1.80
         puts ""
         puts "Would you like to learn about another Pokemon? Enter Y or N"
         input = gets.strip.to_s
         if input.capitalize == "Y"
+            puts "Great!!"
+            sleep 1.80
             start
         elsif input.capitalize == "N"
             puts "Ok, thank you for letting me join you on your journey!!"
         else
+            sleep 0.20
             puts "Sorry, but I dont understand your answer"
+            sleep 1.80
             continue
         end
     end
@@ -132,9 +139,8 @@ class Selector::CLI
         puts ""
         sleep 1.20
         self.print_weight(input)
-        sleep 1.20
     end
-    
+
 end
 
 

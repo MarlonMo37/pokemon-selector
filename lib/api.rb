@@ -5,8 +5,8 @@ class Selector::API
         [100, 151],
         [135, 251],
         [107, 386],
-        [493, 493],
-        [156, 720],
+        [156, 493],
+        [72, 649],
         [88, 721],
         [89, 809]
     ]
@@ -32,5 +32,5 @@ class Selector::API
         info = JSON.parse(response)
         Selector::Pokemon.new(info)
     end
-    
+
 end
